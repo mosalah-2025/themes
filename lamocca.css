@@ -1,4 +1,4 @@
-<style>
+
 /* البوب أب نفسه */
 div[data-headlessui-state="open"] {
   border-radius: 8px !important; /* خليها 0 لو عايزه حاد */
@@ -18,13 +18,13 @@ div[data-headlessui-state="open"] input {
 div[data-headlessui-state="open"] button[type="submit"] {
   border-radius: 6px !important;
 }
-</style>
 
 
 
 
 
-<style>
+
+
 /* الصور داخل هذا المربع تبقى مربعة وحادة */
 .mt-3\.5.flex.flex-col.items-center .relative.overflow-hidden img,
 .mt-3\.5.flex.flex-col.items-center .relative.overflow-hidden {
@@ -33,12 +33,12 @@ div[data-headlessui-state="open"] button[type="submit"] {
   height: 100%;
   object-fit: cover; /* الصور تملأ المربع بدون تشويه */
 }
-</style>
 
 
 
 
-<style>
+
+
 /* خلي كل الأزرار داخل القسم ده حادة ومستطيلة */
 .mt-5.flex.flex-col-reverse button {
   border-radius: 0 !important; /* حواف حادة */
@@ -55,7 +55,7 @@ div[data-headlessui-state="open"] button[type="submit"] {
 .mt-5.flex.flex-col-reverse .flex.justify-center button {
   border-radius: 0 !important;
 }
-</style>
+
 
 
 
@@ -74,12 +74,12 @@ div[data-headlessui-state="open"] button[type="submit"] {
 .checkout_btn {
   animation: shake-horizontal 1.2s ease-in-out infinite;
 }
-</style>
 
 
 
 
- <style>
+
+ 
 /* فورمة الشراء الأساسية */
 .product_form_checkout {
   border-radius: 14px !important; /* بيضاوي */
@@ -145,9 +145,7 @@ div[data-headlessui-state="open"] button[type="submit"] {
 .product_form_checkout .payment_card_description {
   font-family: 'Almarai', sans-serif !important;
 }
-</style>
 
-<style>
 /* تعديل Padding للحروف عشان تبقى بعيدة عن الايقونات */
 .product_form_checkout input.global_input,
 .product_form_checkout textarea.global_textarea {
@@ -167,11 +165,7 @@ div[data-headlessui-state="open"] button[type="submit"] {
   padding-left: 8px !important;
   padding-right: 8px !important;
 }
-</style>
 
-
-
-<style>
 /* كل الحقول تكون بيضاوية وخفيفة الحواف */
 .checkout_form input.global_input,
 .checkout_form textarea.global_textarea {
@@ -223,15 +217,7 @@ div[data-headlessui-state="open"] button[type="submit"] {
   padding-left: 16px !important;
   padding-right: 16px !important;
 }
-</style>
 
-
-
-
-
-
-
-<style>
 /* زر Buy Now */
 .py-6 .mt-6 > button {
   border-radius: 0 !important;       /* مستطيل حاد */
@@ -330,28 +316,13 @@ button.checkout_buy_now:hover {
   opacity: 0.9;
 }
 
-</style>
 
 
 
-<!-- ===== بانر الفيديو (موبايل + كمبيوتر) ===== -->
-<div id="videoBannerBlock">
 
-  <section class="video-hero" id="videoHero">
-    <!-- فيديو الكمبيوتر -->
-    <video id="desktopVideo" autoplay muted loop playsinline preload="auto" poster="YOUR_POSTER_DESKTOP.jpg">
-      <source src="https://template.canva.com/EAF1IQpETww/1/document_810w-vcFD4kK06Sc.mp4" type="video/mp4">
-      
-    </video>
 
-    <!-- فيديو الموبايل -->
-    <video id="mobileVideo" autoplay muted loop playsinline preload="auto" poster="YOUR_POSTER_MOBILE.jpg">
-      <source src="https://template.canva.com/EAF1IQpETww/1/document_810w-vcFD4kK06Sc.mp4" type="video/mp4">
-     
-    </video>
-  </section>
 
-  <style>
+  
     .video-hero {
       position: relative;
       width: 100%;
@@ -399,12 +370,9 @@ button.checkout_buy_now:hover {
       font-size: clamp(.9rem, 1.6vw, 1.05rem);
       opacity: .95;
     }
-  </style>
-
-</div>
+  
 
 
-<style>
 
 /* Hide other footers */
 footer:not(.custom-footer) {
@@ -534,81 +502,5 @@ footer.custom-footer {
     max-width: 250px;
   }
 }
-</style>
 
-<footer class="custom-footer">
 
-  <!-- Logo -->
-  <div class="footer-logo">
-    <img src="https://files.easy-orders.net/1768999864864078343.webp" alt="Logo">
-  </div>
-
-  <div class="footer-cols">
-
-    <!-- Column 1 -->
-    <div class="footer-col">
-      <details>
-        <summary>MENU</summary>
-        <div class="footer-content">
-          <a href="/collections/Soft-Mixes">Soft Mixes</a>
-          <a href="/collections/Smothies">Smothies</a>
-          <a href="/collections/Iced-Coffee">Iced Coffee</a>
-          <a href="/collections/Hot-Drinks">Hot Drinks</a>
-          
-        </div>
-      </details>
-    </div>
-
-    <!-- Column 2 -->
-    <div class="footer-col">
-      <details>
-        <summary>Customer Care</summary>
-        <div class="footer-content">
-          <a href="/pages/shipping-policy">Shipping Policy</a>
-          <a href="/pages/refund-policy">Refund & Exchange Policy</a>
-          <a href="/pages/privacy-policy">Privacy Policy</a>
-          <a href="/pages/terms-and-conditions">Terms & Conditions</a>
-          <a href="/pages/About-Us">About Us</a>
-        </div>
-      </details>
-    </div>
-
-    <!-- Column 3 -->
-    <div class="footer-col">
-      <details>
-        <summary>About Us</summary>
-        <div class="footer-content">
-          Our mission is to deliver trusted products, smooth shopping, and dependable support all in one place.
-          <!-- Social -->
-          <div class="footer-social">
-            <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-
-           <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-
-           <a href="https://www.tiktok.com" target="_blank"> <i class="fa-brands fa-tiktok"></i></a>
-
-           <a href="https://wa.me/201234567890" target="_blank"> <i class="fa-brands fa-whatsapp"></i></a>
-
-           <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-
-           <a href="https://www.pinterest.com" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
-
-          </div>
-        </div>
-      </details>
-    </div>
-
-  </div>
-
-  <!-- Copyright -->
-  <div class="footer-bottom">
-    <div>LA MOCCA – All Rights Reserved © 2026</div>
-    <div style="white-space: nowrap; text-align: center;">
-      POWERED BY <a href="https://bluelines.myeasyorders.com/" target="_blank" style="color:#3B82F6; text-decoration: none; font-weight: bold;">BLUE LINES</a>
-    </div>
-  </div>
-
-</footer>
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
