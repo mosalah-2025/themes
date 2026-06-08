@@ -116,31 +116,32 @@
 
 
 
+// كود إجباري: بيبني العناصر لو مش موجودة
 (function() {
-    console.log("--- بداية تشغيل سكربت الفلاتر ---");
-
-    function init() {
-        // بنحاول نلاقي العناصر بأكتر من اسم محتمل (تغيير ذكي)
-        const sidebar = document.getElementById('sidebar-filters') || document.querySelector('.sidebar') || document.querySelector('.filters');
-        const grid = document.getElementById('grid') || document.querySelector('.product-grid') || document.querySelector('.collection-grid');
-
-        if (!sidebar) {
-            console.error("خطأ: لم أجد أي عنصر للـ Sidebar! تأكد من وجود ID 'sidebar-filters' أو كلاس 'sidebar'");
-        }
-        if (!grid) {
-            console.error("خطأ: لم أجد أي عنصر للـ Grid! تأكد من وجود ID 'grid' أو كلاس 'product-grid'");
-        }
-
-        if (sidebar && grid) {
-            console.log("تم العثور على العناصر بنجاح، جاري بناء الفلاتر...");
-            // هنا كمل بناء الكود بتاعك
-            sidebar.innerHTML = "<div>الفلاتر اشتغلت!</div>"; // تيست سريع
-            grid.style.border = "2px solid red"; // تيست عشان تشوف الجريد اتحدد
-        } else {
-            console.warn("جاري المحاولة مجدداً...");
-            setTimeout(init, 1000);
-        }
+    console.log("السكربت بدأ العمل...");
+    
+    // 1. إنشاء الحاويات لو مش موجودة
+    let grid = document.getElementById('grid');
+    let sidebar = document.getElementById('sidebar-filters');
+    
+    if (!grid) {
+        grid = document.createElement('div');
+        grid.id = 'grid';
+        grid.style.display = 'grid';
+        grid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+        grid.style.gap = '20px';
+        document.body.appendChild(grid); // بيحط الجريد في آخر الصفحة
     }
 
-    init();
+    if (!sidebar) {
+        sidebar = document.createElement('div');
+        sidebar.id = 'sidebar-filters';
+        document.body.prepend(sidebar); // بيحط الفلتر في أول الصفحة
+    }
+
+    // 2. تعبئة بيانات تجريبية (عشان نتأكد إن الجريد شغال)
+    grid.innerHTML = '<h2 style="color:red;">الجريد شغال!</h2>';
+    sidebar.innerHTML = '<h2 style="color:blue;">الفلتر شغال!</h2>';
+    
+    console.log("تم إنشاء العناصر إجبارياً.");
 })();
