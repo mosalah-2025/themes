@@ -116,38 +116,31 @@
 
 
 
-window.addEventListener('load', function() {
-    console.log("السكربت بدأ دلوقتي بعد ما كل حاجة حملت...");
+(function() {
+    console.log("--- بداية تشغيل سكربت الفلاتر ---");
 
-    // 1. تعريف المتغيرات
-    const PER_PAGE = 12;
-    let currentPage = 1;
-    let filteredCards = []; // هنجيبها من ALL_CARDS
-    
-    // تأكد إن ALL_CARDS معرفة هنا
-    const ALL_CARDS = [ /* ... حط الداتا بتاعتك هنا ... */ ];
-    filteredCards = [...ALL_CARDS];
+    function init() {
+        // بنحاول نلاقي العناصر بأكتر من اسم محتمل (تغيير ذكي)
+        const sidebar = document.getElementById('sidebar-filters') || document.querySelector('.sidebar') || document.querySelector('.filters');
+        const grid = document.getElementById('grid') || document.querySelector('.product-grid') || document.querySelector('.collection-grid');
 
-    // 2. دالة بناء الفلاتر
-    function buildFilterHTML(prefix) {
-        // ... (كود بناء الفلاتر بتاعك)
-    }
+        if (!sidebar) {
+            console.error("خطأ: لم أجد أي عنصر للـ Sidebar! تأكد من وجود ID 'sidebar-filters' أو كلاس 'sidebar'");
+        }
+        if (!grid) {
+            console.error("خطأ: لم أجد أي عنصر للـ Grid! تأكد من وجود ID 'grid' أو كلاس 'product-grid'");
+        }
 
-    // 3. دالة التشغيل
-    function run() {
-        const sidebar = document.getElementById('sidebar-filters');
-        const grid = document.getElementById('grid');
-        
         if (sidebar && grid) {
-            sidebar.innerHTML = buildFilterHTML('s-');
-            renderPage();
-            console.log("تم تحميل الفلاتر والجريد بنجاح!");
+            console.log("تم العثور على العناصر بنجاح، جاري بناء الفلاتر...");
+            // هنا كمل بناء الكود بتاعك
+            sidebar.innerHTML = "<div>الفلاتر اشتغلت!</div>"; // تيست سريع
+            grid.style.border = "2px solid red"; // تيست عشان تشوف الجريد اتحدد
         } else {
-            console.warn("العناصر لسه مش موجودة، هنحاول ننتظر...");
-            setTimeout(run, 500); 
+            console.warn("جاري المحاولة مجدداً...");
+            setTimeout(init, 1000);
         }
     }
 
-    // ابدأ
-    run();
-});
+    init();
+})();
