@@ -111,3 +111,43 @@
 
     init(); // ابدأ البحث
 })();
+
+
+
+
+
+window.addEventListener('load', function() {
+    console.log("السكربت بدأ دلوقتي بعد ما كل حاجة حملت...");
+
+    // 1. تعريف المتغيرات
+    const PER_PAGE = 12;
+    let currentPage = 1;
+    let filteredCards = []; // هنجيبها من ALL_CARDS
+    
+    // تأكد إن ALL_CARDS معرفة هنا
+    const ALL_CARDS = [ /* ... حط الداتا بتاعتك هنا ... */ ];
+    filteredCards = [...ALL_CARDS];
+
+    // 2. دالة بناء الفلاتر
+    function buildFilterHTML(prefix) {
+        // ... (كود بناء الفلاتر بتاعك)
+    }
+
+    // 3. دالة التشغيل
+    function run() {
+        const sidebar = document.getElementById('sidebar-filters');
+        const grid = document.getElementById('grid');
+        
+        if (sidebar && grid) {
+            sidebar.innerHTML = buildFilterHTML('s-');
+            renderPage();
+            console.log("تم تحميل الفلاتر والجريد بنجاح!");
+        } else {
+            console.warn("العناصر لسه مش موجودة، هنحاول ننتظر...");
+            setTimeout(run, 500); 
+        }
+    }
+
+    // ابدأ
+    run();
+});
