@@ -1,0 +1,1588 @@
+:root{
+  --nu-pink:#D94F8A;
+  --nu-dark-pink:#B93670;
+  --nu-deep:#542438;
+  --nu-text:#653049;
+  --nu-soft:#FFF5F9;
+  --nu-soft-2:#FDE8F1;
+  --nu-white:#FFFFFF;
+  --nu-muted:#8E7581;
+  --nu-border:rgba(84,36,56,.11);
+}
+
+
+/* =========================================================
+   الخط العام
+========================================================= */
+
+html,
+body,
+button,
+input,
+select,
+textarea{
+  font-family:
+    "Cairo",
+    Tahoma,
+    Arial,
+    sans-serif !important;
+}
+
+
+/* =========================================================
+   إخفاء هيدر Easy Orders الأساسي
+========================================================= */
+
+body > .ab-header,
+body > [class*="ab-header"],
+.ab-header,
+.ab-header-inner,
+body > nav[class*="header"],
+body > div[class*="store-header"]{
+  display:none !important;
+  visibility:hidden !important;
+
+  height:0 !important;
+  min-height:0 !important;
+
+  margin:0 !important;
+  padding:0 !important;
+
+  overflow:hidden !important;
+
+  opacity:0 !important;
+}
+
+
+/* =========================================================
+   المساحة التعويضية للهيدر
+========================================================= */
+
+body{
+  padding-top:104px !important;
+}
+
+
+/* =========================================================
+   Checkout
+========================================================= */
+
+html.nu-checkout-page body{
+  padding-top:0 !important;
+}
+
+
+html.nu-checkout-page
+#nu-premium-header-shell,
+
+html.nu-checkout-page
+#nu-mobile-overlay,
+
+html.nu-checkout-page
+#nu-mobile-drawer{
+  display:none !important;
+}
+
+
+/* =========================================================
+   شاشة التحميل
+========================================================= */
+
+#nu-splash-screen,
+#nu-splash-screen *{
+  box-sizing:border-box !important;
+}
+
+
+#nu-splash-screen{
+  position:fixed !important;
+
+  inset:0 !important;
+
+  z-index:2147483647 !important;
+
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:100% !important;
+  height:100dvh !important;
+
+  overflow:hidden !important;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(217,79,138,.14),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 85% 85%,
+      rgba(247,199,217,.45),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #FFFFFF 0%,
+      #FFF7FB 50%,
+      #FBE7F0 100%
+    ) !important;
+
+  opacity:1 !important;
+  visibility:visible !important;
+
+  transition:
+    opacity .65s ease,
+    visibility .65s ease !important;
+}
+
+
+#nu-splash-screen.nu-splash-hidden{
+  opacity:0 !important;
+  visibility:hidden !important;
+
+  pointer-events:none !important;
+}
+
+
+#nu-splash-screen .nu-splash-content{
+  position:relative !important;
+
+  z-index:3 !important;
+
+  display:flex !important;
+
+  flex-direction:column !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:min(94%,520px) !important;
+
+  text-align:center !important;
+}
+
+
+#nu-splash-screen .nu-splash-logo-area{
+  position:relative !important;
+
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:410px !important;
+  max-width:92vw !important;
+
+  min-height:260px !important;
+}
+
+
+#nu-splash-screen .nu-splash-logo{
+  position:relative !important;
+
+  z-index:3 !important;
+
+  display:block !important;
+
+  width:370px !important;
+  max-width:90vw !important;
+
+  height:auto !important;
+  max-height:235px !important;
+
+  object-fit:contain !important;
+
+  filter:
+    drop-shadow(
+      0 18px 25px
+      rgba(84,36,56,.12)
+    ) !important;
+
+  animation:
+    nuLogoMotion
+    1.9s ease-in-out
+    infinite !important;
+}
+
+
+#nu-splash-screen .nu-splash-glow{
+  position:absolute !important;
+
+  width:215px !important;
+  height:215px !important;
+
+  border-radius:50% !important;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(217,79,138,.24),
+      rgba(217,79,138,.08) 46%,
+      transparent 72%
+    ) !important;
+
+  animation:
+    nuGlowMotion
+    1.8s ease-in-out
+    infinite !important;
+}
+
+
+#nu-splash-screen .nu-splash-ring{
+  position:absolute !important;
+
+  width:245px !important;
+  height:245px !important;
+
+  border:
+    1px solid
+    rgba(185,54,112,.20) !important;
+
+  border-radius:50% !important;
+
+  animation:
+    nuRingMotion
+    2.4s linear
+    infinite !important;
+}
+
+
+#nu-splash-screen .nu-splash-ring::after{
+  content:"" !important;
+
+  position:absolute !important;
+
+  top:21px !important;
+  left:46px !important;
+
+  width:7px !important;
+  height:7px !important;
+
+  background:
+    var(--nu-dark-pink) !important;
+
+  border-radius:50% !important;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(217,79,138,.10),
+    0 0 17px
+    rgba(185,54,112,.38) !important;
+}
+
+
+#nu-splash-screen .nu-splash-title{
+  margin:0 0 18px !important;
+
+  color:var(--nu-deep) !important;
+
+  font-size:13px !important;
+  font-weight:800 !important;
+  letter-spacing:1.2px !important;
+}
+
+
+#nu-splash-screen .nu-splash-track{
+  position:relative !important;
+
+  width:min(260px,74vw) !important;
+  height:5px !important;
+
+  overflow:hidden !important;
+
+  background:
+    rgba(185,54,112,.12) !important;
+
+  border-radius:999px !important;
+}
+
+
+#nu-splash-progress{
+  position:absolute !important;
+
+  top:0 !important;
+  left:0 !important;
+
+  width:0;
+  height:100% !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      #F09AC0,
+      var(--nu-dark-pink),
+      #F09AC0
+    ) !important;
+
+  border-radius:inherit !important;
+}
+
+
+#nu-splash-screen .nu-splash-dots{
+  display:flex !important;
+
+  gap:6px !important;
+
+  margin-top:15px !important;
+}
+
+
+#nu-splash-screen .nu-splash-dots span{
+  width:5px !important;
+  height:5px !important;
+
+  background:
+    var(--nu-dark-pink) !important;
+
+  border-radius:50% !important;
+
+  animation:
+    nuDotMotion
+    1.15s ease-in-out
+    infinite !important;
+}
+
+
+#nu-splash-screen .nu-splash-dots span:nth-child(2){
+  animation-delay:.17s !important;
+}
+
+
+#nu-splash-screen .nu-splash-dots span:nth-child(3){
+  animation-delay:.34s !important;
+}
+
+
+#nu-splash-screen .nu-splash-circle{
+  position:absolute !important;
+
+  display:block !important;
+
+  border-radius:50% !important;
+}
+
+
+#nu-splash-screen .nu-splash-circle-one{
+  top:-90px !important;
+  right:-60px !important;
+
+  width:230px !important;
+  height:230px !important;
+
+  background:
+    rgba(217,79,138,.10) !important;
+}
+
+
+#nu-splash-screen .nu-splash-circle-two{
+  bottom:-60px !important;
+  left:-50px !important;
+
+  width:180px !important;
+  height:180px !important;
+
+  background:
+    rgba(247,199,217,.36) !important;
+}
+
+
+/* =========================================================
+   الهيدر
+========================================================= */
+
+#nu-premium-header-shell,
+#nu-premium-header-shell *,
+#nu-mobile-drawer,
+#nu-mobile-drawer *{
+  box-sizing:border-box !important;
+}
+
+
+#nu-premium-header-shell{
+  position:fixed !important;
+
+  top:0 !important;
+  right:0 !important;
+  left:0 !important;
+
+  z-index:2147482000 !important;
+
+  display:block !important;
+
+  width:100% !important;
+}
+
+
+/* شريط الترخيص */
+
+#nu-premium-license-bar{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  gap:7px !important;
+
+  min-height:34px !important;
+
+  padding:5px 13px !important;
+
+  color:#FFFFFF !important;
+
+  background:
+    linear-gradient(
+      100deg,
+      #C9427D 0%,
+      #A73568 47%,
+      #542438 100%
+    ) !important;
+
+  text-align:center !important;
+}
+
+
+#nu-premium-license-bar
+.nu-license-icon{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:20px !important;
+  height:20px !important;
+
+  flex:0 0 20px !important;
+
+  background:
+    rgba(255,255,255,.15) !important;
+
+  border:
+    1px solid
+    rgba(255,255,255,.24) !important;
+
+  border-radius:50% !important;
+}
+
+
+#nu-premium-license-bar
+.nu-license-icon svg{
+  width:12px !important;
+  height:12px !important;
+}
+
+
+#nu-premium-license-bar p{
+  margin:0 !important;
+
+  color:#FFFFFF !important;
+
+  font-size:10px !important;
+  font-weight:600 !important;
+  line-height:1.6 !important;
+}
+
+
+#nu-premium-license-bar strong,
+#nu-premium-license-bar b{
+  color:#FFFFFF !important;
+  font-weight:900 !important;
+}
+
+
+/* جسم الهيدر */
+
+#nu-premium-header{
+  display:block !important;
+
+  width:100% !important;
+
+  background:
+    rgba(255,255,255,.965) !important;
+
+  border-bottom:
+    1px solid
+    var(--nu-border) !important;
+
+  box-shadow:
+    0 8px 30px
+    rgba(84,36,56,.07) !important;
+
+  backdrop-filter:
+    blur(18px)
+    saturate(145%) !important;
+}
+
+
+#nu-premium-header-shell.nu-scrolled
+#nu-premium-header{
+  background:
+    rgba(255,255,255,.99) !important;
+
+  box-shadow:
+    0 12px 34px
+    rgba(84,36,56,.11) !important;
+}
+
+
+#nu-premium-header .nu-header-inner{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:space-between !important;
+
+  gap:22px !important;
+
+  width:min(
+    calc(100% - 32px),
+    1320px
+  ) !important;
+
+  min-height:70px !important;
+
+  margin:0 auto !important;
+
+  padding:7px 0 !important;
+
+  /* اللوجو يسار، الأدوات يمين */
+  direction:ltr !important;
+
+  transition:
+    min-height .25s ease !important;
+}
+
+
+#nu-premium-header-shell.nu-scrolled
+.nu-header-inner{
+  min-height:62px !important;
+}
+
+
+/* اللوجو */
+
+#nu-premium-header .nu-header-logo{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:flex-start !important;
+
+  min-width:145px !important;
+
+  flex:0 0 auto !important;
+}
+
+
+#nu-premium-header .nu-header-logo img{
+  display:block !important;
+
+  width:auto !important;
+  max-width:156px !important;
+
+  height:51px !important;
+
+  object-fit:contain !important;
+
+  transition:
+    height .25s ease,
+    transform .25s ease !important;
+}
+
+
+#nu-premium-header-shell.nu-scrolled
+.nu-header-logo img{
+  height:45px !important;
+}
+
+
+/* قائمة الكمبيوتر */
+
+#nu-premium-header .nu-desktop-nav{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  flex:1 1 auto !important;
+
+  gap:4px !important;
+
+  min-width:0 !important;
+
+  direction:rtl !important;
+}
+
+
+#nu-premium-header .nu-desktop-nav > a,
+#nu-premium-header .nu-more-button{
+  position:relative !important;
+
+  display:inline-flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  min-height:38px !important;
+
+  padding:7px 10px !important;
+
+  color:var(--nu-text) !important;
+  background:transparent !important;
+
+  border:0 !important;
+  border-radius:11px !important;
+
+  font-size:10.5px !important;
+  font-weight:800 !important;
+
+  white-space:nowrap !important;
+
+  text-decoration:none !important;
+
+  cursor:pointer !important;
+
+  transition:
+    color .22s ease,
+    background .22s ease,
+    transform .22s ease !important;
+}
+
+
+#nu-premium-header .nu-desktop-nav > a::after{
+  content:"" !important;
+
+  position:absolute !important;
+
+  right:50% !important;
+  bottom:2px !important;
+
+  width:0 !important;
+  height:2px !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--nu-pink),
+      var(--nu-dark-pink)
+    ) !important;
+
+  border-radius:999px !important;
+
+  transform:
+    translateX(50%) !important;
+
+  transition:
+    width .22s ease !important;
+}
+
+
+#nu-premium-header .nu-desktop-nav > a:hover,
+#nu-premium-header .nu-desktop-nav > a.nu-active,
+#nu-premium-header .nu-more-button:hover{
+  color:var(--nu-deep) !important;
+
+  background:
+    var(--nu-soft) !important;
+
+  transform:
+    translateY(-1px) !important;
+}
+
+
+#nu-premium-header .nu-desktop-nav > a:hover::after,
+#nu-premium-header .nu-desktop-nav > a.nu-active::after{
+  width:20px !important;
+}
+
+
+/* قائمة المزيد */
+
+#nu-premium-header .nu-more-menu{
+  position:relative !important;
+}
+
+
+#nu-premium-header .nu-more-button{
+  gap:5px !important;
+}
+
+
+#nu-premium-header .nu-more-button svg{
+  width:14px !important;
+  height:14px !important;
+
+  transition:
+    transform .22s ease !important;
+}
+
+
+#nu-premium-header
+.nu-more-menu.nu-open
+.nu-more-button svg,
+
+#nu-premium-header
+.nu-more-menu:hover
+.nu-more-button svg{
+  transform:
+    rotate(180deg) !important;
+}
+
+
+#nu-premium-header .nu-more-dropdown{
+  position:absolute !important;
+
+  top:
+    calc(100% + 13px) !important;
+
+  right:50% !important;
+
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(2,minmax(185px,1fr)) !important;
+
+  gap:12px !important;
+
+  width:430px !important;
+
+  padding:14px !important;
+
+  visibility:hidden !important;
+  opacity:0 !important;
+
+  background:#FFFFFF !important;
+
+  border:
+    1px solid
+    rgba(84,36,56,.10) !important;
+
+  border-radius:20px !important;
+
+  box-shadow:
+    0 22px 60px
+    rgba(84,36,56,.17) !important;
+
+  transform:
+    translate(50%,8px) !important;
+
+  pointer-events:none !important;
+
+  transition:
+    opacity .22s ease,
+    visibility .22s ease,
+    transform .22s ease !important;
+
+  direction:rtl !important;
+}
+
+
+#nu-premium-header
+.nu-more-menu.nu-open
+.nu-more-dropdown,
+
+#nu-premium-header
+.nu-more-menu:hover
+.nu-more-dropdown{
+  visibility:visible !important;
+  opacity:1 !important;
+
+  transform:
+    translate(50%,0) !important;
+
+  pointer-events:auto !important;
+}
+
+
+#nu-premium-header
+.nu-more-dropdown > div{
+  padding:8px !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      #FFFFFF,
+      #FFF9FC
+    ) !important;
+
+  border:
+    1px solid
+    rgba(217,79,138,.09) !important;
+
+  border-radius:14px !important;
+}
+
+
+#nu-premium-header
+.nu-more-dropdown strong{
+  display:block !important;
+
+  padding:
+    3px 8px 8px !important;
+
+  color:var(--nu-dark-pink) !important;
+
+  font-size:9px !important;
+  font-weight:900 !important;
+}
+
+
+#nu-premium-header
+.nu-more-dropdown a{
+  display:flex !important;
+
+  align-items:center !important;
+
+  min-height:35px !important;
+
+  padding:7px 9px !important;
+
+  color:var(--nu-text) !important;
+
+  border-radius:9px !important;
+
+  font-size:10px !important;
+  font-weight:700 !important;
+
+  text-decoration:none !important;
+}
+
+
+#nu-premium-header
+.nu-more-dropdown a:hover{
+  color:var(--nu-deep) !important;
+
+  background:
+    var(--nu-soft-2) !important;
+}
+
+
+/* الأدوات */
+
+#nu-premium-header .nu-header-actions{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:flex-end !important;
+
+  gap:7px !important;
+
+  min-width:145px !important;
+
+  direction:ltr !important;
+}
+
+
+#nu-premium-header .nu-header-icon{
+  position:relative !important;
+
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:38px !important;
+  height:38px !important;
+
+  flex:0 0 38px !important;
+
+  padding:0 !important;
+
+  color:var(--nu-deep) !important;
+
+  background:
+    rgba(255,255,255,.94) !important;
+
+  border:
+    1px solid
+    rgba(84,36,56,.12) !important;
+
+  border-radius:12px !important;
+
+  box-shadow:
+    0 5px 15px
+    rgba(84,36,56,.045) !important;
+
+  text-decoration:none !important;
+
+  cursor:pointer !important;
+
+  transition:
+    color .22s ease,
+    background .22s ease,
+    transform .22s ease !important;
+}
+
+
+#nu-premium-header .nu-header-icon svg{
+  width:17px !important;
+  height:17px !important;
+}
+
+
+#nu-premium-header .nu-header-icon:hover{
+  color:#FFFFFF !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--nu-pink),
+      var(--nu-dark-pink)
+    ) !important;
+
+  transform:
+    translateY(-2px) !important;
+}
+
+
+#nu-premium-header .nu-cart-count{
+  position:absolute !important;
+
+  top:-5px !important;
+  right:-5px !important;
+
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  min-width:17px !important;
+  height:17px !important;
+
+  padding:0 4px !important;
+
+  color:#FFFFFF !important;
+  background:var(--nu-dark-pink) !important;
+
+  border:
+    2px solid
+    #FFFFFF !important;
+
+  border-radius:999px !important;
+
+  font-size:8px !important;
+  font-weight:900 !important;
+}
+
+
+#nu-premium-header
+.nu-mobile-menu-button{
+  display:none !important;
+}
+
+
+/* =========================================================
+   خلفية القائمة الجانبية
+========================================================= */
+
+#nu-mobile-overlay{
+  position:fixed !important;
+
+  inset:0 !important;
+
+  z-index:2147482500 !important;
+
+  visibility:hidden !important;
+  opacity:0 !important;
+
+  background:
+    rgba(42,17,29,.52) !important;
+
+  border:0 !important;
+
+  backdrop-filter:
+    blur(4px) !important;
+
+  pointer-events:none !important;
+
+  transition:
+    visibility .3s ease,
+    opacity .3s ease !important;
+}
+
+
+body.nu-menu-open
+#nu-mobile-overlay{
+  visibility:visible !important;
+  opacity:1 !important;
+
+  pointer-events:auto !important;
+}
+
+
+/* =========================================================
+   القائمة الجانبية
+========================================================= */
+
+#nu-mobile-drawer{
+  position:fixed !important;
+
+  top:0 !important;
+  right:0 !important;
+
+  z-index:2147483000 !important;
+
+  display:flex !important;
+
+  flex-direction:column !important;
+
+  width:min(88vw,390px) !important;
+  height:100dvh !important;
+
+  padding:
+    16px 15px
+    calc(
+      18px +
+      env(safe-area-inset-bottom)
+    ) !important;
+
+  visibility:hidden !important;
+
+  overflow-x:hidden !important;
+  overflow-y:auto !important;
+
+  color:var(--nu-text) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      #FFFFFF,
+      #FFF9FC
+    ) !important;
+
+  border-left:
+    1px solid
+    rgba(217,79,138,.12) !important;
+
+  box-shadow:
+    -24px 0 70px
+    rgba(54,22,39,.24) !important;
+
+  transform:
+    translateX(105%) !important;
+
+  transition:
+    visibility .34s ease,
+    transform .34s
+    cubic-bezier(.22,.9,.32,1) !important;
+}
+
+
+body.nu-menu-open
+#nu-mobile-drawer{
+  visibility:visible !important;
+
+  transform:
+    translateX(0) !important;
+}
+
+
+body.nu-menu-open{
+  overflow:hidden !important;
+}
+
+
+/* رأس القائمة */
+
+#nu-mobile-drawer .nu-drawer-header{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:space-between !important;
+
+  gap:14px !important;
+
+  padding-bottom:13px !important;
+
+  border-bottom:
+    1px solid
+    rgba(84,36,56,.10) !important;
+
+  direction:ltr !important;
+}
+
+
+#nu-mobile-drawer .nu-drawer-logo{
+  display:flex !important;
+}
+
+
+#nu-mobile-drawer .nu-drawer-logo img{
+  display:block !important;
+
+  width:auto !important;
+  max-width:127px !important;
+
+  height:44px !important;
+
+  object-fit:contain !important;
+}
+
+
+#nu-mobile-drawer .nu-drawer-close{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  width:36px !important;
+  height:36px !important;
+
+  padding:0 !important;
+
+  color:var(--nu-deep) !important;
+  background:var(--nu-soft) !important;
+
+  border:
+    1px solid
+    rgba(217,79,138,.18) !important;
+
+  border-radius:11px !important;
+
+  cursor:pointer !important;
+}
+
+
+#nu-mobile-drawer .nu-drawer-close svg{
+  width:17px !important;
+  height:17px !important;
+}
+
+
+/* البحث والسلة */
+
+#nu-mobile-drawer .nu-drawer-actions{
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr)) !important;
+
+  gap:8px !important;
+
+  margin-top:13px !important;
+}
+
+
+#nu-mobile-drawer .nu-drawer-actions a{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  gap:7px !important;
+
+  min-height:43px !important;
+
+  padding:8px 10px !important;
+
+  color:var(--nu-deep) !important;
+  background:#FFFFFF !important;
+
+  border:
+    1px solid
+    rgba(84,36,56,.11) !important;
+
+  border-radius:12px !important;
+
+  font-size:10px !important;
+  font-weight:900 !important;
+
+  text-decoration:none !important;
+}
+
+
+#nu-mobile-drawer
+.nu-drawer-actions svg{
+  width:17px !important;
+  height:17px !important;
+}
+
+
+#nu-mobile-drawer
+.nu-drawer-actions b{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  min-width:17px !important;
+  height:17px !important;
+
+  padding:0 4px !important;
+
+  color:#FFFFFF !important;
+  background:var(--nu-dark-pink) !important;
+
+  border-radius:999px !important;
+
+  font-size:8px !important;
+}
+
+
+/* روابط القائمة */
+
+#nu-mobile-drawer .nu-drawer-nav{
+  display:grid !important;
+
+  gap:5px !important;
+
+  margin-top:15px !important;
+}
+
+
+#nu-mobile-drawer .nu-drawer-title{
+  display:block !important;
+
+  padding:0 4px 4px !important;
+
+  color:var(--nu-dark-pink) !important;
+
+  font-size:9px !important;
+  font-weight:900 !important;
+}
+
+
+#nu-mobile-drawer .nu-drawer-nav a{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:space-between !important;
+
+  gap:12px !important;
+
+  min-height:42px !important;
+
+  padding:8px 11px !important;
+
+  color:var(--nu-text) !important;
+  background:#FFFFFF !important;
+
+  border:
+    1px solid
+    rgba(84,36,56,.09) !important;
+
+  border-radius:11px !important;
+
+  font-size:10.5px !important;
+  font-weight:800 !important;
+
+  text-decoration:none !important;
+}
+
+
+#nu-mobile-drawer
+.nu-drawer-nav a:hover,
+
+#nu-mobile-drawer
+.nu-drawer-nav a.nu-active{
+  color:var(--nu-deep) !important;
+
+  background:var(--nu-soft) !important;
+
+  border-color:
+    rgba(217,79,138,.22) !important;
+}
+
+
+#nu-mobile-drawer .nu-drawer-nav b{
+  color:var(--nu-pink) !important;
+}
+
+
+/* زر السلة */
+
+#nu-mobile-drawer .nu-drawer-checkout{
+  display:flex !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+
+  gap:8px !important;
+
+  min-height:49px !important;
+
+  margin-top:16px !important;
+
+  padding:11px 17px !important;
+
+  color:#FFFFFF !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--nu-pink),
+      var(--nu-dark-pink),
+      var(--nu-deep)
+    ) !important;
+
+  border-radius:999px !important;
+
+  box-shadow:
+    0 11px 25px
+    rgba(185,54,112,.23) !important;
+
+  font-size:11px !important;
+  font-weight:900 !important;
+
+  text-decoration:none !important;
+}
+
+
+#nu-mobile-drawer
+.nu-drawer-checkout svg{
+  width:18px !important;
+  height:18px !important;
+}
+
+
+/* =========================================================
+   التابلت والموبايل
+========================================================= */
+
+@media(max-width:900px){
+
+  body{
+    padding-top:96px !important;
+  }
+
+
+  #nu-premium-header .nu-header-inner{
+    width:
+      calc(100% - 20px) !important;
+
+    min-height:
+      62px !important;
+
+    padding:
+      5px 0 !important;
+  }
+
+
+  #nu-premium-header .nu-desktop-nav{
+    display:none !important;
+  }
+
+
+  #nu-premium-header .nu-header-logo{
+    min-width:0 !important;
+  }
+
+
+  #nu-premium-header .nu-header-logo img{
+    max-width:116px !important;
+    height:43px !important;
+  }
+
+
+  #nu-premium-header .nu-header-actions{
+    min-width:0 !important;
+  }
+
+
+  #nu-premium-header
+  .nu-mobile-menu-button{
+    display:flex !important;
+  }
+
+
+  #nu-premium-license-bar p{
+    font-size:8.5px !important;
+  }
+
+
+  #nu-splash-screen .nu-splash-logo-area{
+    width:350px !important;
+    min-height:230px !important;
+  }
+
+
+  #nu-splash-screen .nu-splash-logo{
+    width:320px !important;
+    max-height:210px !important;
+  }
+
+
+  #nu-splash-screen .nu-splash-glow{
+    width:185px !important;
+    height:185px !important;
+  }
+
+
+  #nu-splash-screen .nu-splash-ring{
+    width:210px !important;
+    height:210px !important;
+  }
+
+}
+
+
+/* الموبايل الصغير */
+
+@media(max-width:480px){
+
+  #nu-premium-license-bar{
+    padding:
+      5px 7px !important;
+  }
+
+
+  #nu-premium-license-bar p{
+    font-size:
+      7.7px !important;
+  }
+
+
+  #nu-premium-license-bar
+  .nu-license-icon{
+    width:18px !important;
+    height:18px !important;
+    flex-basis:18px !important;
+  }
+
+
+  #nu-premium-header .nu-header-inner{
+    gap:9px !important;
+  }
+
+
+  #nu-premium-header .nu-header-logo img{
+    max-width:105px !important;
+    height:40px !important;
+  }
+
+
+  #nu-premium-header .nu-header-actions{
+    gap:5px !important;
+  }
+
+
+  #nu-premium-header .nu-header-icon{
+    width:35px !important;
+    height:35px !important;
+    flex-basis:35px !important;
+  }
+
+
+  #nu-premium-header .nu-header-icon svg{
+    width:16px !important;
+    height:16px !important;
+  }
+
+
+  #nu-splash-screen .nu-splash-logo-area{
+    width:315px !important;
+    min-height:210px !important;
+  }
+
+
+  #nu-splash-screen .nu-splash-logo{
+    width:290px !important;
+    max-height:195px !important;
+  }
+
+}
+
+
+/* القائمة الجانبية للموبايل فقط */
+
+@media(min-width:901px){
+
+  #nu-mobile-overlay,
+  #nu-mobile-drawer{
+    display:none !important;
+  }
+
+}
+
+
+/* =========================================================
+   الحركة
+========================================================= */
+
+@keyframes nuLogoMotion{
+
+  0%,
+  100%{
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50%{
+    transform:
+      translateY(-11px)
+      scale(1.025);
+  }
+
+}
+
+
+@keyframes nuGlowMotion{
+
+  0%,
+  100%{
+    opacity:.42;
+    transform:scale(.90);
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1.12);
+  }
+
+}
+
+
+@keyframes nuRingMotion{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+
+@keyframes nuDotMotion{
+
+  0%,
+  100%{
+    opacity:.28;
+    transform:
+      translateY(0)
+      scale(.8);
+  }
+
+  50%{
+    opacity:1;
+    transform:
+      translateY(-4px)
+      scale(1.12);
+  }
+
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+  #nu-splash-screen *,
+  #nu-premium-header-shell *,
+  #nu-mobile-drawer,
+  #nu-mobile-overlay{
+    animation:none !important;
+    transition:none !important;
+  }
+
+}
+
+
+/* =========================================================
+   ستايل إضافي (كان في تاج style منفصل في الكود الأصلي)
+========================================================= */
+
+* {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
